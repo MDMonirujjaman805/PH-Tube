@@ -20,25 +20,33 @@
       <div>
         <img src="assets/Logo.png" alt="" />
       </div>
-      <label class="input">
-        <svg
-          class="h-[1em] opacity-50"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2.5"
-            fill="none"
-            stroke="currentColor"
+      <div class="search">
+        <label class="input input-bordered flex items-center gap-2">
+          <input
+            id="search-input"
+            type="text"
+            class="grow"
+            placeholder="Search"
+          />
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
           >
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </g>
-        </svg>
-        <input type="search" required placeholder="Search" />
-      </label>
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+        </label>
+      </div>
+
       <button id="btn-blog" class="btn btn-lg">Blog</button>
     </div>
     <!-- Nabvar-style end here -->
@@ -56,6 +64,26 @@
       ></section>
     </main>
     <!-- body style end here  -->
+
+    <!-- Open the modal using ID.showModal() method -->
+    <button
+      id="showModalData"
+      class="btn hidden"
+      onclick="customModal.showModal()"
+    >
+      open modal
+    </button>
+    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="modal-content"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
     <!-- script tag -->
     <script src="index.js"></script>
   </body>
